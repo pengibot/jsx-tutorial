@@ -1,7 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const StudentDetails = ({ match, students }) => {
-  const studentId = parseInt(match.params.id, 10);
+  const { id } = useParams();
+  const studentId = parseInt(id, 10);
   const student = students.find((s) => s.id === studentId);
 
   if (!student) {

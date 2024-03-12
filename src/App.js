@@ -30,6 +30,9 @@ function App() {
             <li>
               <Link to="/add">Add Student</Link>
             </li>
+            <li>
+              <Link to="/students/1">Get Student one</Link>
+            </li>
           </ul>
         </nav>
         <hr />
