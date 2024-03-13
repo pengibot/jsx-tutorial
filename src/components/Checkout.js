@@ -4,10 +4,14 @@ import { Container, ListGroup, Row, Col, Button } from "react-bootstrap";
 
 const Checkout = ({ products, onRemoveFromCart }) => {
   // Calculate the total price
-  const totalPrice = products.reduce(
-    (acc, product) => acc + product.price * product.quantity,
-    0
-  );
+
+  console.log(products);
+
+  if (products.length === 0) {
+    return <p>No products in cart.</p>;
+  }
+  const totalPrice = 123;
+  // const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
 
   console.log(products);
 

@@ -14,12 +14,17 @@ function App() {
     // Try to get data from localStorage
     const savedProducts = localStorage.getItem("products");
     // If there is data, parse it to JSON, otherwise default to an empty array
-    return savedProducts ? JSON.parse(savedProducts) : [];
+    return savedProducts;
   });
 
+  // const addProduct = (newProduct) => {
+  //   console.log("Product added to cart");
+  //   setProducts([...products, { ...newProduct }]);
+  // };
   const addProduct = (newProduct) => {
     console.log("Product added to cart");
-    setProducts([...products, { ...newProduct }]);
+    console.log(products);
+    setProducts([...products, { ...newProduct, id: products.length + 1 }]);
   };
 
   const removeProduct = (productId) => {
@@ -29,11 +34,9 @@ function App() {
       (product) => product.id !== productId
     );
 
-    // Update the products state
     setProducts(updatedProducts);
   };
 
-  // Inside your component
   useEffect(() => {
     // Save the products to localStorage whenever they change
     localStorage.setItem("products", JSON.stringify(products));
@@ -52,7 +55,7 @@ function App() {
               <Nav.Link href="/checkout">Checkout</Nav.Link>
             </Nav>
             <Nav className="ms-auto">
-              <Nav.Link href="/cart">
+              <Nav.Link href="/checkout">
                 <img
                   src={cartIcon}
                   alt="Cart"
