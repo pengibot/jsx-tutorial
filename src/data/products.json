@@ -1,0 +1,39 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Xbox 360",
+            "price": "124.99",
+            "image": "xbox360.png",
+            "description": "The Xbox 360 is a home video game console developed by Microsoft. As the successor to the original Xbox, it is the second console in the Xbox series. It competed with Sony's PlayStation 3 and Nintendo's Wii as part of the seventh generation of video game consoles."
+        },
+        {
+            "id": 2,
+            "name": "Nintendo Wii",
+            "price": "99.99",
+            "image": "wii.png",
+            "description": "The Wii is a home video game console developed and marketed by Nintendo. It was first released on November 19, 2006, in North America and in December 2006 for most other regions. It is Nintendo's fifth major home game console, following the GameCube, and is a seventh generation home console alongside Microsoft's Xbox 360 and Sony's PlayStation 3."
+        },
+        {
+            "id": 3,
+            "name": "Playstation 3",
+            "price": "79.99",
+            "image": "ps3.png",
+            "description": "The PlayStation 3 (PS3) is a home video game console developed by Sony Computer Entertainment. It is the successor to PlayStation 2, and is part of the PlayStation brand of consoles. It was first released on November 11, 2006, in Japan, November 17, 2006, in North America, and March 23, 2007, in Europe and Australia."
+        },
+        {
+            "id": 4,
+            "name": "Playstation 4",
+            "price": "159.99",
+            "image": "ps4.png",
+            "description": "The PlayStation 4 (PS4) is a home video game console developed by Sony Computer Entertainment. Announced as the successor to the PlayStation 3 in February 2013, it was launched on November 15, 2013, in North America, November 29, 2013, in Europe, South America and Australia, and on February 22, 2014, in Japan."
+        },
+        {
+            "id": 5,
+            "name": "Playstation 5",
+            "price": "299.99",
+            "image": "ps5.png",
+            "description": "The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020, in Australia, Japan, New Zealand, North America, and South Korea, with worldwide release following a week later."
+        }
+    ]
+}
