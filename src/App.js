@@ -37,10 +37,10 @@ function App() {
     setProducts(updatedProducts);
   };
 
-  useEffect(() => {
-    // Save the products to localStorage whenever they change
-    localStorage.setItem("products", JSON.stringify(products));
-  }, [products]);
+  // useEffect(() => {
+  //   // Save the products to localStorage whenever they change
+  //   localStorage.setItem("products", JSON.stringify(products));
+  // }, [products]);
 
   return (
     <Router>
