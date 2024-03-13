@@ -7,6 +7,19 @@ const Checkout = ({ products, onRemoveFromCart }) => {
 
   console.log(products);
 
+  products = [
+    {
+      id: 1,
+      name: "Product 1",
+      price: 100,
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      price: 200,
+    },
+  ];
+
   if (products.length === 0) {
     return <p>No products in cart.</p>;
   }
