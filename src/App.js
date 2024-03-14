@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProductDetails from "./components/ProductDetails";
 import ProductList from "./components/ProductList";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import { Navbar, Nav } from "react-bootstrap";
 import cartIcon from "./assets/cart.png";
@@ -71,7 +70,6 @@ function App() {
             exact
             element={<ProductList onAddToCart={addProduct} />}
           />
-          <Route path="/cart" element={<Cart products={productsInCart} />} />
           <Route
             path="/checkout"
             element={
