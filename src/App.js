@@ -11,7 +11,6 @@ import ControlledCarousel from "./components/ControlledCarousel";
 
 function App() {
   const [productsInCart, setProductsInCart] = useState(() => {
-    // Try to get products from localStorage when initializing state
     const savedProducts = localStorage.getItem("productsInCart");
     if (savedProducts) {
       return JSON.parse(savedProducts);
@@ -21,11 +20,8 @@ function App() {
   });
 
   useEffect(() => {
-    // Save products to localStorage whenever productsInCart changes
     localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
   }, [productsInCart]);
-
-  // const [productsInCart, setProductsInCart] = useState([]);
 
   const addProduct = (newProductInCart) => {
     setProductsInCart([
