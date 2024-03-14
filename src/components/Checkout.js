@@ -3,30 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, ListGroup, Row, Col, Button } from "react-bootstrap";
 
 const Checkout = ({ products, onRemoveFromCart }) => {
-  // Calculate the total price
-
-  console.log(products);
-
-  products = [
-    {
-      id: 1,
-      name: "Product 1",
-      price: 100,
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: 200,
-    },
-  ];
-
   if (products.length === 0) {
     return <p>No products in cart.</p>;
   }
-  const totalPrice = 123;
-  // const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
 
-  console.log(products);
+  const totalPrice = products.reduce(
+    (acc, product) => acc + Number(product.price),
+    0
+  );
 
   return (
     <Container>
@@ -38,7 +22,9 @@ const Checkout = ({ products, onRemoveFromCart }) => {
               <Col md={6}>{product.name}</Col>
               <Col md={3}>${product.price}</Col>
               <Col me={3}>
-                <button onClick={onRemoveFromCart}>Remove from Cart</button>
+                <button onClick={() => onRemoveFromCart(product.id)}>
+                  Remove from Cart
+                </button>
               </Col>
             </Row>
           </ListGroup.Item>

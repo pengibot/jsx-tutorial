@@ -10,37 +10,39 @@ import cartIcon from "./assets/cart.png";
 import ControlledCarousel from "./components/ControlledCarousel";
 
 function App() {
-  const [products, setProducts] = useState(() => {
-    // Try to get data from localStorage
-    const savedProducts = localStorage.getItem("products");
-    // If there is data, parse it to JSON, otherwise default to an empty array
-    return savedProducts;
+  const [productsInCart, setProductsInCart] = useState(() => {
+    // Try to get products from localStorage when initializing state
+    const savedProducts = localStorage.getItem("productsInCart");
+    if (savedProducts) {
+      return JSON.parse(savedProducts);
+    } else {
+      return [];
+    }
   });
 
-  // const addProduct = (newProduct) => {
-  //   console.log("Product added to cart");
-  //   setProducts([...products, { ...newProduct }]);
-  // };
-  const addProduct = (newProduct) => {
+  useEffect(() => {
+    // Save products to localStorage whenever productsInCart changes
+    localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
+  }, [productsInCart]);
+
+  // const [productsInCart, setProductsInCart] = useState([]);
+
+  const addProduct = (newProductInCart) => {
+    setProductsInCart([
+      ...productsInCart,
+      { ...newProductInCart, id: productsInCart.length + 1 },
+    ]);
     console.log("Product added to cart");
-    console.log(products);
-    setProducts([...products, { ...newProduct, id: products.length + 1 }]);
   };
 
   const removeProduct = (productId) => {
     console.log("Removing product from cart:", productId);
 
-    const updatedProducts = products.filter(
+    const updatedProductsInCart = productsInCart.filter(
       (product) => product.id !== productId
     );
-
-    setProducts(updatedProducts);
+    setProductsInCart(updatedProductsInCart);
   };
-
-  // useEffect(() => {
-  //   // Save the products to localStorage whenever they change
-  //   localStorage.setItem("products", JSON.stringify(products));
-  // }, [products]);
 
   return (
     <Router>
@@ -73,16 +75,19 @@ function App() {
             exact
             element={<ProductList onAddToCart={addProduct} />}
           />
-          <Route path="/cart" element={<Cart products={products} />} />
+          <Route path="/cart" element={<Cart products={productsInCart} />} />
           <Route
             path="/checkout"
             element={
-              <Checkout products={products} onRemoveFromCart={removeProduct} />
+              <Checkout
+                products={productsInCart}
+                onRemoveFromCart={removeProduct}
+              />
             }
           />
           <Route
             path="/products/:id"
-            element={<ProductDetails products={products} />}
+            element={<ProductDetails products={productsInCart} />}
           />
         </Routes>
       </div>

@@ -4,14 +4,11 @@ import jsonData from "../data/products.json";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const ProductDetails = ({ match, products }) => {
+const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const productId = parseInt(id, 10);
-  console.log(productId);
   const product = jsonData.products.find((product) => product.id === productId);
-
-  console.log(product);
 
   if (!product) {
     return <p>Product not found.</p>;
