@@ -1,8 +1,5 @@
 .carousel-image {
     width: 100%;
-    /* Ensure the image spans the full width of the carousel */
     height: 100%;
-    /* Stretch to the full height of the carousel item */
     object-fit: cover;
-    /* Cover the container without losing aspect ratio, may crop */
 }

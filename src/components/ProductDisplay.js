@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// Define the ProductDisplay component
 const ProductDisplay = ({ product, onAddToCart }) => {
   let navigate = useNavigate();
 
